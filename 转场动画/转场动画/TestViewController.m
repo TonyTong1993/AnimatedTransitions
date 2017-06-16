@@ -18,6 +18,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor redColor];
     self.transitioningDelegate = self;
+    self.modalPresentationStyle = UIModalPresentationCustom;
     // Do any additional setup after loading the view.
     UIButton * presentButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
     presentButton.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
@@ -34,9 +35,9 @@
 }
 // present动画
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
-    return [[TYAnimatedTranstion alloc] init];
+    return [[TYAnimatedTranstion alloc] initWithAnimationType:AnimationTypePush];
 }
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
-     return [[TYAnimatedTranstion alloc] init];
+     return [[TYAnimatedTranstion alloc] initWithAnimationType:AnimationTypePop];
 }
 @end

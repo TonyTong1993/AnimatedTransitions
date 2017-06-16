@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+typedef NS_ENUM(NSUInteger,AnimationType) {
+    AnimationTypePush,
+    AnimationTypePop
+};
 @interface TYAnimatedTranstion : NSObject<UIViewControllerAnimatedTransitioning>
-
+@property (nonatomic,assign) AnimationType animationType;
+-(instancetype)initWithAnimationType:(AnimationType)type;
 @end

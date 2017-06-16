@@ -35,12 +35,6 @@
 }
 // present动画
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
-    return [[TYAnimatedTranstion alloc] init];
+    return [[TYAnimatedTranstion alloc] initWithAnimationType:AnimationTypePush];
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
 @end
