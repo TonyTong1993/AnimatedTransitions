@@ -13,6 +13,8 @@
 		EB21D15E1EF28541004C4D5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB21D15C1EF28541004C4D5F /* Main.storyboard */; };
 		EB21D1601EF28541004C4D5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB21D15F1EF28541004C4D5F /* Assets.xcassets */; };
 		EB21D1631EF28541004C4D5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB21D1611EF28541004C4D5F /* LaunchScreen.storyboard */; };
+		EB21D16C1EF28607004C4D5F /* TYAnimatedTranstion.m in Sources */ = {isa = PBXBuildFile; fileRef = EB21D16B1EF28607004C4D5F /* TYAnimatedTranstion.m */; };
+		EB25B5AC1EF3731D009CCCBD /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB25B5AB1EF3731D009CCCBD /* TestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		EB21D15F1EF28541004C4D5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB21D1621EF28541004C4D5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB21D1641EF28541004C4D5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB21D16A1EF28607004C4D5F /* TYAnimatedTranstion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYAnimatedTranstion.h; sourceTree = "<group>"; };
+		EB21D16B1EF28607004C4D5F /* TYAnimatedTranstion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYAnimatedTranstion.m; sourceTree = "<group>"; };
+		EB25B5AA1EF3731D009CCCBD /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		EB25B5AB1EF3731D009CCCBD /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,10 @@
 				EB21D1611EF28541004C4D5F /* LaunchScreen.storyboard */,
 				EB21D1641EF28541004C4D5F /* Info.plist */,
 				EB21D1531EF28541004C4D5F /* Supporting Files */,
+				EB21D16A1EF28607004C4D5F /* TYAnimatedTranstion.h */,
+				EB21D16B1EF28607004C4D5F /* TYAnimatedTranstion.m */,
+				EB25B5AA1EF3731D009CCCBD /* TestViewController.h */,
+				EB25B5AB1EF3731D009CCCBD /* TestViewController.m */,
 			);
 			path = "转场动画";
 			sourceTree = "<group>";
@@ -153,7 +163,9 @@
 			files = (
 				EB21D15B1EF28541004C4D5F /* ViewController.m in Sources */,
 				EB21D1581EF28541004C4D5F /* AppDelegate.m in Sources */,
+				EB21D16C1EF28607004C4D5F /* TYAnimatedTranstion.m in Sources */,
 				EB21D1551EF28541004C4D5F /* main.m in Sources */,
+				EB25B5AC1EF3731D009CCCBD /* TestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +324,7 @@
 				EB21D1691EF28541004C4D5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
