@@ -9,32 +9,86 @@
 #import "ViewController.h"
 #import "TYAnimatedTranstion.h"
 #import "TestViewController.h"
-@interface ViewController ()<UIViewControllerTransitioningDelegate>
+#import "TYTavBarControllerDelegate.h"
+@interface ViewController ()<UIViewControllerTransitioningDelegate>{
+    NSUInteger subViewControllerCount;
+}
+@property (nonatomic,retain) UIPanGestureRecognizer *panGesture;
+@property (nonatomic,strong) TYTavBarControllerDelegate *tabBarVCDelegate;
 
 @end
-
 @implementation ViewController
-
+-(UIPanGestureRecognizer *)panGesture {
+    if (!_panGesture) {
+        _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
+    }
+    return _panGesture;
+}
+-(TYTavBarControllerDelegate *)tabBarVCDelegate {
+    if (!_tabBarVCDelegate) {
+        _tabBarVCDelegate = [[TYTavBarControllerDelegate alloc] init];
+    }
+    return _tabBarVCDelegate;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.transitioningDelegate = self;
-    UIButton * presentButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
-    presentButton.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
-    [self.view addSubview:presentButton];
-    presentButton.backgroundColor = [UIColor blackColor];
-    [presentButton setTitle:@"present" forState:UIControlStateNormal];
-    [presentButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [presentButton addTarget:self action:@selector(presentClick) forControlEvents:UIControlEventTouchUpInside];
-    self.view.backgroundColor = [UIColor greenColor];
+    subViewControllerCount = [self viewControllers].count;
+    [self.view addGestureRecognizer:self.panGesture];
+    self.delegate = self.tabBarVCDelegate;
 }
-- (void)presentClick{
-    TestViewController * secondVC = [[TestViewController alloc] init];
-    secondVC.transitioningDelegate = self; // 必须second同样设置delegate才有动画
-    [self presentViewController:secondVC animated:YES completion:^{
-    }];
-}
-// present动画
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
-    return [[TYAnimatedTranstion alloc] initWithAnimationType:AnimationTypePush];
+-(void)handlePan:(UIPanGestureRecognizer *)panGesture {
+    CGFloat translationX = [panGesture translationInView:self.view].x;
+    CGFloat translationXAbs = fabs(translationX);
+    CGFloat progress = translationXAbs / self.view.frame.size.width;
+    switch (panGesture.state) {
+        case UIGestureRecognizerStateBegan:
+        {
+            
+            _tabBarVCDelegate.interactive = true;
+            CGFloat velocityX = [panGesture velocityInView:self.view].x;
+            if (velocityX < 0) {
+                if (self.selectedIndex < subViewControllerCount -1) {
+                    self.selectedIndex += 1;
+                }
+            }else {
+                if (self.selectedIndex > 0) {
+                    self.selectedIndex -= 1;
+                }
+            }
+        }
+            break;
+        case UIGestureRecognizerStateChanged:
+        {
+            [self.tabBarVCDelegate.interactionController updateInteractiveTransition:progress];
+        }
+            break;
+        case UIGestureRecognizerStateCancelled:
+        {
+            if (progress > 0.3) {
+                self.tabBarVCDelegate.interactionController.completionSpeed = 0.99;
+                [self.tabBarVCDelegate.interactionController finishInteractiveTransition];
+            }else {
+                self.tabBarVCDelegate.interactionController.completionSpeed = 0.99;
+                [self.tabBarVCDelegate.interactionController cancelInteractiveTransition];
+            }
+            self.tabBarVCDelegate.interactive = false;
+        }
+            break;
+            case UIGestureRecognizerStateEnded:
+        {
+            
+            if (progress > 0.3) {
+                self.tabBarVCDelegate.interactionController.completionSpeed = 0.99;
+                [self.tabBarVCDelegate.interactionController finishInteractiveTransition];
+            }else {
+                self.tabBarVCDelegate.interactionController.completionSpeed = 0.99;
+                [self.tabBarVCDelegate.interactionController cancelInteractiveTransition];
+            }
+            self.tabBarVCDelegate.interactive = false;
+        }
+            break;
+        default:
+            break;
+    }
 }
 @end

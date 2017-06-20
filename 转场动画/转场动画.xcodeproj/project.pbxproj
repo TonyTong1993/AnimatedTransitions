@@ -15,6 +15,8 @@
 		EB21D1631EF28541004C4D5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB21D1611EF28541004C4D5F /* LaunchScreen.storyboard */; };
 		EB21D16C1EF28607004C4D5F /* TYAnimatedTranstion.m in Sources */ = {isa = PBXBuildFile; fileRef = EB21D16B1EF28607004C4D5F /* TYAnimatedTranstion.m */; };
 		EB25B5AC1EF3731D009CCCBD /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB25B5AB1EF3731D009CCCBD /* TestViewController.m */; };
+		EB54A33C1EF8C8D900DEFA08 /* SlideAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB54A33B1EF8C8D900DEFA08 /* SlideAnimationController.m */; };
+		EB54A33F1EF8FDA100DEFA08 /* TYTavBarControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB54A33E1EF8FDA100DEFA08 /* TYTavBarControllerDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		EB21D16B1EF28607004C4D5F /* TYAnimatedTranstion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYAnimatedTranstion.m; sourceTree = "<group>"; };
 		EB25B5AA1EF3731D009CCCBD /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		EB25B5AB1EF3731D009CCCBD /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		EB54A33A1EF8C8D900DEFA08 /* SlideAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideAnimationController.h; sourceTree = "<group>"; };
+		EB54A33B1EF8C8D900DEFA08 /* SlideAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideAnimationController.m; sourceTree = "<group>"; };
+		EB54A33D1EF8FDA100DEFA08 /* TYTavBarControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTavBarControllerDelegate.h; sourceTree = "<group>"; };
+		EB54A33E1EF8FDA100DEFA08 /* TYTavBarControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTavBarControllerDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,10 @@
 				EB21D16B1EF28607004C4D5F /* TYAnimatedTranstion.m */,
 				EB25B5AA1EF3731D009CCCBD /* TestViewController.h */,
 				EB25B5AB1EF3731D009CCCBD /* TestViewController.m */,
+				EB54A33A1EF8C8D900DEFA08 /* SlideAnimationController.h */,
+				EB54A33B1EF8C8D900DEFA08 /* SlideAnimationController.m */,
+				EB54A33D1EF8FDA100DEFA08 /* TYTavBarControllerDelegate.h */,
+				EB54A33E1EF8FDA100DEFA08 /* TYTavBarControllerDelegate.m */,
 			);
 			path = "转场动画";
 			sourceTree = "<group>";
@@ -164,7 +174,9 @@
 				EB21D15B1EF28541004C4D5F /* ViewController.m in Sources */,
 				EB21D1581EF28541004C4D5F /* AppDelegate.m in Sources */,
 				EB21D16C1EF28607004C4D5F /* TYAnimatedTranstion.m in Sources */,
+				EB54A33F1EF8FDA100DEFA08 /* TYTavBarControllerDelegate.m in Sources */,
 				EB21D1551EF28541004C4D5F /* main.m in Sources */,
+				EB54A33C1EF8C8D900DEFA08 /* SlideAnimationController.m in Sources */,
 				EB25B5AC1EF3731D009CCCBD /* TestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
