@@ -22,14 +22,13 @@
     UIView *containerView = [transitionContext containerView];
     UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
     UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
-    
+    NSLog(@"toView = %@",toView);
     [containerView addSubview:toView];
     
     //自定义动画
     CGFloat translation = containerView.frame.size.width;
     CGAffineTransform toViewTransform = CGAffineTransformIdentity;
     CGAffineTransform fromViewTransform = CGAffineTransformIdentity;
-
     translation = (self.transitionType == TabTransitionLeft)?translation:-translation;
     fromViewTransform = CGAffineTransformMakeTranslation(translation, 0);
     toViewTransform = CGAffineTransformMakeTranslation(-translation, 0);
